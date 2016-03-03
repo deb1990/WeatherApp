@@ -11,11 +11,12 @@
             }, $scope.weatherFetched, $scope.weatherError);
         };
         $scope.weatherError = function () {
-
+            alert("Error fetching weather! Try Again");
+            $scope.isLocationNotAvailable = true;
         };
         $scope.weatherFetched = function (data) {
             $scope.isLocationNotAvailable = false;
-            $scope.temperature = new WeatherInfo(data);
+            $scope.temperature = new WeatherInfo(data, $scope.weatherError);
         };
         $scope.locationError = function () {
             $scope.isLocationNotAvailable = true;

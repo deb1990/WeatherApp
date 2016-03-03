@@ -3,7 +3,7 @@
  */
 
 var WeatherInfo = (function () {
-    function WeatherInfo(data) {
+    function WeatherInfo(data, errorCallback) {
         try {
             this.cityName = data.data.name + ', ' + data.data.sys.country;
             this.maxTemp = parseInt(data.data.main.temp_max);
@@ -12,7 +12,7 @@ var WeatherInfo = (function () {
             this.icon = data.data.weather[0].icon;
         }
         catch (e) {
-            console.error(e);
+            errorCallback();
         }
     }
 
