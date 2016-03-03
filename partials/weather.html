@@ -1,0 +1,12 @@
+<div class="weather_container">
+    <div class="weather_info">
+        <div class="current_temp">{{temperature.currentTemp}} &deg; C</div>
+        <img class="weather_icon" ng-src="http://openweathermap.org/img/w/{{temperature.icon}}.png"/>
+        <div class="city_name">{{temperature.cityName}}</div>
+    </div>
+    <div class="more_weather_info">
+        <span>Max : {{temperature.maxTemp}}&deg;</span>
+        <span class="space"></span>
+        <span>Min : {{temperature.minTemp}}&deg;</span>
+    </div>
+</div>

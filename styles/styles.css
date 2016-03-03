@@ -1,0 +1,98 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #E0E1E3;
+    color: #E0E1E3;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.weather_container, .zipcode_container {
+    height: 180px;
+    width: 400px;
+    background-color: #1F222A;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 10px 9px 30px #242424;
+}
+
+.zipcode_container {
+    height: 140px;
+}
+
+.weather_info, .more_weather_info {
+    height: 120px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.more_weather_info {
+    background-color: #373B46;
+    height: 60px;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.current_temp {
+    position: absolute;
+    width: 140px;
+    font-size: 50px;
+    font-weight: 700;
+    top: 18px;
+}
+
+.weather_icon {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    top: 20px;
+    right: 19px;
+}
+
+.space {
+    margin-left: 40px;
+}
+
+.city_name {
+    position: absolute;
+    top: 90px;
+    text-align: center;
+    left: 0;
+    right: 0;
+}
+
+.zipcode{
+    width: 400px;
+    position: absolute;
+    top: 0px;
+    border: none;
+    background-color: #373B46;
+    height: 85px;
+    border-radius: 10px 10px 0 0;
+    outline: 0;
+    font-size: 45px;
+    text-align: center;
+    color: #E0E1E3;
+}
+.zipcode_button{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 52px;
+    font-size: 18px;
+    background-color: #D23A51;
+    border: none;
+    border-radius: 0 0 10px 10px;
+    color: #E0E1E3;
+    cursor: pointer;
+}
