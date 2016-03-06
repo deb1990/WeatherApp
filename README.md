@@ -8,12 +8,15 @@ This weather appshowcases the following skills,
   - Organized and Maintainable Code
   - E2E testing using Protractor
   - Bower Integration
+  - **Grunt build process**
   - Minimal UI Design
 
 ### Steps to run the application
-You need Bower installed globally:
+You need NodeJs, Bower, Grunt, Grunt CLI installed globally:
 ```sh
+$ npm install
 $ bower install
+$ grunt
 ```
 Run a server to access the code
 
