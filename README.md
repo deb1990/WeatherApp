@@ -21,7 +21,7 @@ $ grunt
 Run a server to access the code
 
 ### Steps to run the e2e test
-You need Bower installed globally:
+You need Protractor installed globally:
 ```sh
 $ npm install -g protractor
 $ nwebdriver-manager update
