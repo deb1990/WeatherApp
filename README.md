@@ -1,5 +1,3 @@
-# WeatherApp
-
 # Weather Application
 
 This weather appshowcases the following skills,
