@@ -3,7 +3,7 @@
  */
 var weatherApp = angular.module("weatherApp", ["ngRoute"]);
 
-weatherApp.config(function ($routeProvider) {
+weatherApp.config(["$routeProvider", function ($routeProvider) {
     $routeProvider
         .when('/', {
             template: '<div show-weather></div>'
@@ -14,4 +14,4 @@ weatherApp.config(function ($routeProvider) {
         .otherwise({
             redirectTo: "/"
         });
-});
+}]);

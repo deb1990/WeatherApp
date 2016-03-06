@@ -3,7 +3,7 @@
  */
 
 (function (module) {
-    function mainController($rootScope, $scope, $location, locationService, weatherService) {
+    function mainController($rootScope, $scope, $location, weatherService) {
         $rootScope.isLoadCurrentUserLocationData = true;
         $scope.locationFetched = function (position) {
             weatherService.fetchWeatherByCoordinates({
@@ -31,5 +31,5 @@
         };
     }
 
-    module.controller("mainController", ["$rootScope", "$scope", "$location", "locationService", "weatherService", mainController]);
+    module.controller("mainController", ["$rootScope", "$scope", "$location", "weatherService", mainController]);
 })(weatherApp);
