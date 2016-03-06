@@ -6,12 +6,10 @@ var weatherApp = angular.module("weatherApp", ["ngRoute"]);
 weatherApp.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
-            template: '<div show-weather></div>',
-            controller: 'mainController'
+            template: '<div show-weather></div>'
         })
         .when('/zipcode', {
-            template: '<div user-location></div>',
-            controller: 'mainController'
+            template: '<div user-location></div>'
         })
         .otherwise({
             redirectTo: "/"

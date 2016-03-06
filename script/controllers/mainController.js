@@ -4,6 +4,7 @@
 
 (function (module) {
     function mainController($rootScope, $scope, $location, locationService, weatherService) {
+        $rootScope.isLoadCurrentUserLocationData = true;
         $scope.locationFetched = function (position) {
             weatherService.fetchWeatherByCoordinates({
                 latitude: position.coords.latitude,
@@ -19,15 +20,15 @@
             $rootScope.temperature = new WeatherInfo(data, $scope.weatherError);
         };
         $scope.locationError = function () {
+            $rootScope.isLoadCurrentUserLocationData = false;
             $location.path("/zipcode");
-            $scope.apply();
+            $scope.apply($rootScope);
         };
-        $scope.apply = function () {
-            if (!$scope.$$phase) {
-                $scope.$apply()
+        $scope.apply = function (scope) {
+            if (!scope.$$phase) {
+                scope.$apply()
             }
         };
-        locationService.getCurrentLocation($scope.locationFetched, $scope.locationError);
     }
 
     module.controller("mainController", ["$rootScope", "$scope", "$location", "locationService", "weatherService", mainController]);
