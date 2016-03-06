@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
     <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="script/app.js"></script>
     <script src="script/classes/weatherInfo.js"></script>
     <script src="script/constants/appConstants.js"></script>
@@ -15,9 +16,7 @@
     <script src="script/services/weatherService.js"></script>
     <script src="script/controllers/mainController.js"></script>
 </head>
-<body ng-controller="mainController">
-<div show-weather ng-if="!isLocationNotAvailable"></div>
-<div user-location ng-if="isLocationNotAvailable"></div>
-
+<body>
+<div ng-view></div>
 </body>
 </html>

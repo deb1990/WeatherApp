@@ -3,7 +3,7 @@
  */
 
 (function (module) {
-    function mainController($scope, locationService, weatherService) {
+    function mainController($rootScope, $scope, $location, locationService, weatherService) {
         $scope.locationFetched = function (position) {
             weatherService.fetchWeatherByCoordinates({
                 latitude: position.coords.latitude,
@@ -12,17 +12,23 @@
         };
         $scope.weatherError = function () {
             alert("Error fetching weather! Try Again");
-            $scope.isLocationNotAvailable = true;
+            $scope.locationError();
         };
         $scope.weatherFetched = function (data) {
-            $scope.isLocationNotAvailable = false;
-            $scope.temperature = new WeatherInfo(data, $scope.weatherError);
+            $location.path("/");
+            $rootScope.temperature = new WeatherInfo(data, $scope.weatherError);
         };
         $scope.locationError = function () {
-            $scope.isLocationNotAvailable = true;
+            $location.path("/zipcode");
+            $scope.apply();
+        };
+        $scope.apply = function () {
+            if (!$scope.$$phase) {
+                $scope.$apply()
+            }
         };
         locationService.getCurrentLocation($scope.locationFetched, $scope.locationError);
     }
 
-    module.controller("mainController", ["$scope", "locationService", "weatherService", mainController]);
+    module.controller("mainController", ["$rootScope", "$scope", "$location", "locationService", "weatherService", mainController]);
 })(weatherApp);
