@@ -24,8 +24,8 @@ Run a server to access the code
 You need Protractor installed globally:
 ```sh
 $ npm install -g protractor
-$ nwebdriver-manager update
-$ nwebdriver-manager start
+$ webdriver-manager update
+$ webdriver-manager start
 $ cd Test
 $ protractor conf.js
 ```
