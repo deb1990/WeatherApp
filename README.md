@@ -1,6 +1,6 @@
 # Weather Application
 
-This weather appshowcases the following skills,
+This weather appshowcases the following skills ,
 
   - AngularJS
   - Javascript OOPS
